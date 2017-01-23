@@ -4,13 +4,13 @@
 //
 //    go myFunc()
 //
-//  However, there exist a couple common problems here:
-//    - There may be checks which must be performed which may preclude the goroutine from running
-//    - There may be synchronous actions which must be performed before the surrounding code is allowed to continue execution
+// However, there exist a couple common problems here:
+//   - There may be checks which must be performed which may preclude the goroutine from running
+//   - There may be synchronous actions which must be performed before the surrounding code is allowed to continue execution
 //
-//  To be sure, there are plenty of solutions to each of these problems.
+// To be sure, there are plenty of solutions to each of these problems.
 //
-//  You could embed the goroutine inside the subroutine:
+// You could embed the goroutine inside the subroutine:
 //
 //    func Subroutine(a int) error {
 //      if a < 1 {
@@ -27,10 +27,10 @@
 //      // do stuff
 //    }
 //
-//  The problem here is that when reading through the top-level logic, it is
-//  unclear that Subroutine runs in the background.
+// The problem here is that when reading through the top-level logic, it is
+// unclear that Subroutine runs in the background.
 //
-//  You could provide a channel for signaling:
+// You could provide a channel for signaling:
 //
 //    func Subroutine(a int, errCh <-chan error) {
 //      defer close(errCh)
@@ -46,9 +46,9 @@
 //    }
 //
 //
-//  This latter path provides a fairly flexible system, with the cost of an
-//  additional temporary goroutine.  What this package does, essentially, is
-//  provide simple wrapper to do exactly this.
+// This latter path provides a fairly flexible system, with the cost of an
+// additional temporary goroutine.  What this package does, essentially, is
+// provide simple wrapper to do exactly this.
 //
 package gocond
 
