@@ -4,11 +4,9 @@
 //
 //    go myFunc()
 //
-// """
 // However, there exist a couple common problems here:
 //   * There may be checks which must be performed which may preclude the goroutine from running
 //   * There may be synchronous actions which must be performed before the surrounding code is allowed to continue execution
-// """
 //
 // To be sure, there are plenty of solutions to each of these problems.
 //
